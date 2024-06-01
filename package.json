@@ -11,9 +11,6 @@
     "bittorrent-tracker": "./bin/cmd.js"
   },
   "browser": {
-    "./lib/common-node.js": false,
-    "./lib/client/http-tracker.js": false,
-    "./lib/client/udp-tracker.js": false,
     "./server.js": false,
     "socks": false
   },
@@ -27,6 +24,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@fkn/lib": "file:../../fkn/lib",
     "@thaunknown/simple-peer": "^10.0.6",
     "@thaunknown/simple-websocket": "^9.1.1",
     "bencode": "^4.0.0",

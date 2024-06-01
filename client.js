@@ -7,8 +7,8 @@ import queueMicrotask from 'queue-microtask'
 import { hex2arr, hex2bin, text2arr, arr2hex, arr2text } from 'uint8-util'
 
 import common from './lib/common.js'
-import HTTPTracker from './lib/client/http-tracker.js' // empty object in browser
-import UDPTracker from './lib/client/udp-tracker.js' // empty object in browser
+import HTTPTracker from './lib/client/http-tracker.js'
+import UDPTracker from './lib/client/udp-tracker.js'
 import WebSocketTracker from './lib/client/websocket-tracker.js'
 
 const debug = Debug('bittorrent-tracker:client')
@@ -32,7 +32,7 @@ const debug = Debug('bittorrent-tracker:client')
 class Client extends EventEmitter {
   constructor (opts = {}) {
     super()
-
+    console.log('CLIENT TRACKER CREATED', opts)
     if (!opts.peerId) throw new Error('Option `peerId` is required')
     if (!opts.infoHash) throw new Error('Option `infoHash` is required')
     if (!opts.announce) throw new Error('Option `announce` is required')
