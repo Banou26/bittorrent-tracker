@@ -32,7 +32,6 @@ const debug = Debug('bittorrent-tracker:client')
 class Client extends EventEmitter {
   constructor (opts = {}) {
     super()
-    console.log('CLIENT TRACKER CREATED', opts)
     if (!opts.peerId) throw new Error('Option `peerId` is required')
     if (!opts.infoHash) throw new Error('Option `infoHash` is required')
     if (!opts.announce) throw new Error('Option `announce` is required')
